@@ -3,13 +3,8 @@
 
 # # Slot Machine
 
-# In[1]:
-
 
 import random
-
-
-# In[2]:
 
 
 #Constants
@@ -37,9 +32,6 @@ symbol_value = {
 }
 
 
-# In[3]:
-
-
 #Input function to accept deposit amount
 def deposit():
     while True:
@@ -53,9 +45,6 @@ def deposit():
         else:
             print("Please enter a number.")
     return amount
-
-
-# In[4]:
 
 
 #Number of lines player wants to play
@@ -73,9 +62,6 @@ def get_number_of_lines():
     return lines
 
 
-# In[5]:
-
-
 #Amount to bet per line
 def get_bet():
     while True:
@@ -89,9 +75,6 @@ def get_bet():
         else:
             print("Please enter a number.")
     return amount
-
-
-# In[6]:
 
 
 #Generate column reel of slot machine spin
@@ -115,9 +98,6 @@ def get_slot_machine_spin(rows, cols, symbols):
     return columns
 
 
-# In[7]:
-
-
 #Transpose the rows
 def print_slot_machine(columns):
     for row in range(len(columns[0])):
@@ -127,9 +107,6 @@ def print_slot_machine(columns):
             else:
                 print(column[row], end = "")
         print() #Go next line
-
-
-# In[8]:
 
 
 #Function to calculate winnings based on number of lines bet on
@@ -146,9 +123,6 @@ def check_winnings(columns, lines, bet, values):
             winnings += values[symbol] * bet #Amount won
             winning_lines.append(line + 1) #Lines that were won
     return winnings, winning_lines
-
-
-# In[9]:
 
 
 def spin(balance):
@@ -173,9 +147,6 @@ def spin(balance):
     return winnings - total_bet
 
 
-# In[10]:
-
-
 #Main function
 def main():
     balance = deposit() #Starting balance/initial deposit
@@ -186,9 +157,6 @@ def main():
             break
         balance += spin(balance)
     print(f"You left with ${balance}")
-
-
-# In[11]:
 
 
 #Run game!
